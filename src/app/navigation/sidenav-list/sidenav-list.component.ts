@@ -13,7 +13,7 @@ export class SidenavListComponent implements OnInit {
   public sidenavData: Sidenav[] = [
     {route: '/events', icon: 'event', name: 'Events'},
     {route: '/signup', icon: 'person_add', name: 'Sign up'},
-    {route: '/login', icon: 'input', name: 'Login'}
+    {route: '/login', icon: 'account_circle', name: 'Login'}
   ]
 
   constructor() { }

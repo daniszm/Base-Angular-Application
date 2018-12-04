@@ -4,7 +4,7 @@
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    <div fxFlex="100px" fxFlex.lt-sm="100%" fxLayoutAlign="start start" fxLayoutAlign.lt-sm="center">
+    <div fxFlex="100px" fxFlex.lt-sm="100%" class="logo-container" fxLayoutAlign="start start" fxLayoutAlign.lt-sm="center">
         <img src="./assets/img/abb_logo.svg" class="logo">
     </div>
     <div fxLayoutAlign="start" fxHide.xs>
@@ -21,7 +21,7 @@
     </div>
     <div fxFlex fxHide.lt-sm></div>
     <div fxFlex fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout="row" fxLayoutGap="10px" class="navigation-items">
+        <ul fxLayout="row" fxLayoutGap="10px" class="navigation-items"> 
             <li>
                 <a routerLink="/signup">Sign up</a>
             </li>
@@ -32,5 +32,5 @@
                 <a>Logout</a>
             </li>
         </ul>
-    </div>
+    </div> 
 </mat-toolbar>
