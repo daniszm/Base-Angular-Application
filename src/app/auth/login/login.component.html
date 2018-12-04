@@ -1,0 +1,62 @@
+<section class="signup-forms">
+    <form 
+      fxLayout="column" 
+      fxLayoutAlign="center center" 
+      fxLayoutGap="5px"
+      #f="ngForm"
+      (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input 
+              matInput
+              type="text" 
+              placeholder="Your email" 
+              ngModel 
+              email
+              required
+              pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.abb.com$"
+              name="email"
+              #emailInput="ngModel">
+              <mat-error 
+                *ngIf="emailInput.hasError('required')">
+                Email field must not be empty.
+              </mat-error>
+              <mat-error 
+                *ngIf="emailInput.hasError('pattern')">
+                Incorrect email. You must be an ABB employee.
+              </mat-error>
+          </mat-form-field>
+        
+          <mat-form-field>
+            <input 
+              type="password" 
+              matInput 
+              placeholder="Your password" 
+              ngModel 
+              required
+              name="password"
+              minlength="6"
+              #passwordInput="ngModel">
+              <mat-error 
+                *ngIf="passwordInput.hasError('required')">
+                Password field must not be empty.
+              </mat-error>
+              <mat-hint 
+                align="start">
+                Password must have min. 6 signs.
+              </mat-hint>
+              <mat-hint 
+                align="end" 
+                *ngIf="passwordInput.value?.length < 6">
+                {{ passwordInput.value?.length }}/6
+              </mat-hint>
+          </mat-form-field>
+
+          <button 
+            type="submit" 
+            [disabled]="f.invalid" 
+            mat-raised-button 
+            color="primary">
+            Sign up
+          </button>
+      </form>
+  </section>

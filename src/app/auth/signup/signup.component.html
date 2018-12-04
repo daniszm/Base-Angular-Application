@@ -1,0 +1,101 @@
+<section class="signup-forms">
+  <form 
+    fxLayout="column" 
+    fxLayoutAlign="center center" 
+    fxLayoutGap="5px"
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)">
+      <mat-form-field>
+          <input  
+            matInput
+            type="text" 
+            placeholder="Your email" 
+            ngModel 
+            email
+            required
+            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.abb.com{1,70}$"
+            name="email"
+            #emailInput="ngModel">
+            <mat-error 
+              *ngIf="emailInput.hasError('required')">
+              Email field must not be empty.
+            </mat-error>
+            <mat-error 
+              *ngIf="emailInput.hasError('pattern')">
+              Incorrect email. You must be an ABB employee.
+            </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input 
+            type="password" 
+            matInput 
+            placeholder="Your password" 
+            ngModel 
+            required
+            name="password"
+            minlength="6"
+            #passwordInput="ngModel">
+            <mat-error 
+              *ngIf="passwordInput.hasError('required')">
+              Password field must not be empty.
+            </mat-error>
+            <mat-hint 
+              align="start">
+              Password must have min. 6 signs.
+            </mat-hint>
+            <mat-hint 
+              align="end" 
+              *ngIf="passwordInput.value?.length < 6">
+              {{ passwordInput.value?.length }}/6
+            </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+              type="password" 
+              matInput 
+              placeholder="Confirm password" 
+              ngModel 
+              required
+              name="password_confirm"
+              minlength="6"
+              #passwordCofirmationInput="ngModel"
+              [disabled]="passwordInput.value?.length == 0">
+              <mat-error 
+                *ngIf="passwordCofirmationInput.hasError('required')">
+                Confirm your password.
+              </mat-error>
+              <mat-error 
+                *ngIf="passwordCofirmationInput.value !== passwordInput.value">
+                Password is not the same.
+              </mat-error>
+              <mat-hint 
+                align="end" 
+                *ngIf="passwordCofirmationInput.value?.length < 6">
+                {{ passwordCofirmationInput.value?.length }}/6
+              </mat-hint>
+          </mat-form-field>
+
+          <mat-checkbox 
+            ngModel 
+            name="agree" 
+            required
+            color="primary">
+            I am a CDC member. *
+          </mat-checkbox>            
+      
+      <!-- <mat-form-field>
+        <mat-select placeholder="Select">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+        <button 
+          type="submit" 
+          [disabled]="f.invalid || passwordInput?.value !== passwordCofirmationInput?.value" 
+          mat-raised-button 
+          color="primary">
+          Sign up
+        </button>
+    </form>
+</section>

@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="toggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div fxFlex="100px" fxFlex.lt-sm="100%" fxLayoutAlign="start start" fxLayoutAlign.lt-sm="center">
+        <img src="https://angular.io/assets/images/logos/angular/angular.png" class="logo">
+    </div>
+    <div fxLayoutAlign="start" fxHide.xs>
+        <div fxFlex>
+            <ul fxLayout="row" fxLayoutGap="10px" class="navigation-items">
+                <li>
+                    <a routerLink="/events">Events</a>
+                </li>
+                <li>
+                    <a routerLink="/my-events">My events</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div fxFlex fxHide.lt-sm></div>
+    <div fxFlex fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout="row" fxLayoutGap="10px" class="navigation-items">
+            <li>
+                <a routerLink="/signup">Sign up</a>
+            </li>
+            <li>
+                <a routerLink="/login">Login</a>
+            </li>
+            <li>
+                <a>Logout</a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>

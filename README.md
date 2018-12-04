@@ -1,1 +1,1 @@
-Simple Input & Output
+Events app

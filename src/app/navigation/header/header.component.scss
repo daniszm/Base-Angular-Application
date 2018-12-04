@@ -1,0 +1,26 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.logo {
+    width: 80px;
+    height: 100%;
+    padding-right: 20px;
+    vertical-align: bottom;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-toolbar {
+    background-color: #262626 !important;
+}
