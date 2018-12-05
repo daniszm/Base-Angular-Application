@@ -1,5 +1,8 @@
-<div style="width:100%">
-<button mat-icon-button color="primary" fxFlex fxLayoutAlign="end" fxLayoutAlign.sm="start">
-    <mat-icon>home</mat-icon>Click me!
-</button>
-</div>
+<mat-tab-group>
+    <mat-tab label="Available events">
+        <app-available-events></app-available-events>
+    </mat-tab>
+    <mat-tab label="My events">
+        <app-user-events></app-user-events>
+    </mat-tab>
+</mat-tab-group>

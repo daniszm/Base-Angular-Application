@@ -1,11 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+*:not(.material-icons) {
+    font-family: ABBfont-Md, sans-serif !important;
+}
+
 html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: ABBfont, sans-serif !important;
     height: 100%;
 }
 
 body {
     margin: 0;
 }
+
+@font-face {
+    font-family: ABBfont-Md;
+    src: url(/assets/fonts/WOFF2/ABBvoiceArabic_W_Md.woff2) format('woff2'),
+         url(/assets/fonts/WOFF/ABBvoiceArabic_W_Md.woff) format('woff'),
+  }
+

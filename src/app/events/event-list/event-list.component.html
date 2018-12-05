@@ -1,0 +1,17 @@
+<div fxFlex fxLayout="column" fxLayoutAlign="center center">
+  <section class="event" fxFlex="100%" fxLayoutAlign="center" *ngFor="let event of availableEvents">
+    <mat-card fxFlex="100%">
+      <mat-card-header>
+        <mat-card-title>{{ event.name }}</mat-card-title>
+      </mat-card-header>
+      <!-- <img mat-card-image src="./assets/img/escape.jpg" class="card-img" alt="Test"> -->
+      <mat-card-content>
+        <p>{{ event.shortDescription }}</p>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center end">
+        <button mat-raised-button color="primary" fxLayout>
+          More info</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-event',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  eventId: number;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.eventId = this.route.snapshot.params['id'];
+    this.log();
+  }
+
+  log() {
+    console.log(this.eventId);
   }
 
 }
