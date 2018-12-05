@@ -22,13 +22,13 @@
     <div fxFlex fxHide.lt-sm></div>
     <div fxFlex fxLayoutAlign="end" fxHide.xs>
         <ul fxLayout="row" fxLayoutGap="10px" class="navigation-items"> 
-            <li>
+            <li *ngIf="!isAuth">
                 <a routerLink="/signup">Sign up</a>
             </li>
-            <li>
+            <li *ngIf="!isAuth">
                 <a routerLink="/login">Login</a>
             </li>
-            <li>
+            <li *ngIf="isAuth">
                 <a>Logout</a>
             </li>
         </ul>

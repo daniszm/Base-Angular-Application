@@ -1,3 +1,4 @@
+import { EventsService } from './../events.service';
 import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/interfaces/event.model';
 
@@ -7,7 +8,6 @@ import { Event } from 'src/app/interfaces/event.model';
   styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
-  
   public availableEvents: Event[] = [{
     name: "Healthy Escape Room",
     shortDescription: "You’ve only 20 minutes to solve crime enigma and escape the room!",
@@ -35,9 +35,10 @@ export class EventListComponent implements OnInit {
     location: "Axis",
   }];
 
-  constructor() { }
+  constructor(private eventsService: EventsService) { }
 
   ngOnInit() {
+    const test = this.eventsService.getAvailableEvents();
+    }
   }
 
-}

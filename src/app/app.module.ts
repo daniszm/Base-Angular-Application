@@ -1,3 +1,4 @@
+import { AuthService } from './auth/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -42,7 +43,7 @@ import { EventComponent } from './events/event/event.component';
     FlexLayoutModule,
     ReactiveFormsModule
   ],
-  providers: [EventsService],
+  providers: [EventsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
