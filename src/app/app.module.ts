@@ -19,6 +19,7 @@ import { EventsService } from './events/events.service';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { UserEventsComponent } from './events/user-events/user-events.component';
 import { EventComponent } from './events/event/event.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EventComponent } from './events/event/event.component';
     HeaderComponent,
     SidenavListComponent,
     UserEventsComponent,
-    EventComponent
+    EventComponent,
+    PageNotFoundComponent
   ],
   imports: [
     AppRoutingModule,
